@@ -6,8 +6,9 @@
   "scripts": {
     "server": "nodemon index.js",
     "client": "cd client && yarn run start --prefix client",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "start": "concurrently \"yarn run server\" \"yarn run client\"",
     "heroku-postbuild": "cd client && yarn install && yarn build"
+    
   },
   "dependencies": {
     "concurrently": "^5.2.0",
