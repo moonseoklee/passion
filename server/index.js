@@ -1,6 +1,13 @@
 const express = require('express')
 const app = express()
 
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "client/build")));
+  }
+
 app.use(express.static('dist'))
 
-app.listen(3000, () => console.log('Listening on port 3000!'))
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT);
