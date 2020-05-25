@@ -1,4 +1,4 @@
-import logo from "./luffy.jpg";
+import logo from "./heegun.jpg";
 import "./App.css";
 import React from 'react';
 
