@@ -1,20 +1,33 @@
 {
-  "name": "passion",
+  "name": "tutorial-react-parcel-express",
   "version": "1.0.0",
+  "description": "A tiny getting started for a react project, with front-end built with parcel, and served through express.",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
-    "server": "nodemon index.js",
-    "client": "cd client && yarn run start --prefix client",
-    "start": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "cd client && yarn install && yarn build"
-    
+    "build-watch": "parcel watch ./client/index.html",
+    "start-watch": "nodemon server/index.js",
+    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run build-watch\"",
+    "build": "parcel build ./client/index.html",
+    "start": "npm run build && node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tutorial",
+    "react",
+    "parcel",
+    "express"
+  ],
+  "author": "witchard",
+  "license": "MIT",
+  "repository": "github:witchard/tutorial-react-parcel-express",
+  "devDependencies": {
+    "concurrently": "*",
+    "nodemon": "*",
+    "parcel-bundler": "*"
   },
   "dependencies": {
-    "concurrently": "^5.2.0",
-    "express": "^4.17.1",
-    "http-proxy-middleware": "^1.0.4",
-    "nodemon": "^2.0.4"
-  },
-  "author": "winnyiee@naver.com <winnyiee@naver.com>"
+    "express": "*",
+    "react": "*",
+    "react-dom": "*"
+  }
 }
