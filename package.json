@@ -4,10 +4,10 @@
   "description": "A tiny getting started for a react project, with front-end built with parcel, and served through express.",
   "main": "index.js",
   "scripts": {
-    "build-watch": "parcel watch ./client/index.html",
+    "build-watch": "parcel watch ./client/public/index.html",
     "start-watch": "nodemon server/index.js",
     "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run build-watch\"",
-    "build": "parcel build ./client/index.html",
+    "build": "parcel build ./client/public/index.html",
     "start": "npm run build && node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd client && yarn install && yarn build"
@@ -22,6 +22,9 @@
   "license": "MIT",
   "repository": "github:moonseoklee/passion",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-react": "^7.9.4",
     "concurrently": "^5.2.0",
     "http-proxy-middleware": "^1.0.4",
     "nodemon": "^2.0.4",
@@ -37,5 +40,14 @@
   "engines": {
     "yarn": "1.22.4",
     "node": "12.16.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   }
 }
