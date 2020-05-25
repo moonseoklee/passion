@@ -1,5 +1,5 @@
 {
-  "name": "tutorial-react-parcel-express",
+  "name": "passion",
   "version": "1.0.0",
   "description": "A tiny getting started for a react project, with front-end built with parcel, and served through express.",
   "main": "index.js",
@@ -20,19 +20,22 @@
   ],
   "author": "witchard",
   "license": "MIT",
-  "repository": "github:witchard/tutorial-react-parcel-express",
+  "repository": "github:moonseoklee/passion",
   "devDependencies": {
-    "concurrently": "*",
-    "nodemon": "*",
+    "concurrently": "^5.2.0",
+    "http-proxy-middleware": "^1.0.4",
+    "nodemon": "^2.0.4",
     "parcel-bundler": "*"
   },
   "dependencies": {
-    "express": "*",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.4",
+    "parcel": "^1.12.4",
     "react": "*",
     "react-dom": "*"
   },
   "engines": {
     "yarn": "1.22.4",
-    "node":"12.16.3"
+    "node": "12.16.3"
   }
 }
