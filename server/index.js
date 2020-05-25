@@ -9,6 +9,10 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(express.static('dist'))
 
+app.get("/moon", (req, res) => {
+    res.send("moon");
+  });
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
